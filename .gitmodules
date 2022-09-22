@@ -1,3 +1,0 @@
-[submodule "AprilTag3/apriltags"]
-	path = AprilTag3/apriltags
-	url = https://github.com/AprilRobotics/apriltags.git
