@@ -32,12 +32,13 @@
 #include "apriltags/tag16h5.h"
 #include "apriltags/tag25h9.h"
 #include "apriltags/tag36h11.h"
+#include "apriltags/tag36h10.h"
 #include "apriltags/tagStandard41h12.h"
 #include "apriltags/tagStandard52h13.h"
 #include "apriltags/tagCircle21h7.h"
 #include "apriltags/tagCircle49h12.h"
 #include "apriltags/tagCustom48h12.h"
-#include "apriltags/tagCustom48h12.h"
+#include "apriltags/tagCustom48h11.h"
 
 #include "common/homography.h"
 
@@ -368,10 +369,10 @@ static NSMutableArray *blockWrappers;
     
     cameraWrapper = [[CameraWrapper alloc] initWithCallbackBlock:cb];
     
-    apriltag_family_t **objs = (apriltag_family_t*[]) { tag36h11_create(), tag25h9_create(), tag16h5_create(),
+    apriltag_family_t **objs = (apriltag_family_t*[]) { tag36h11_create(), tag36h10_create(),tag25h9_create(), tag16h5_create(),
         tagStandard41h12_create(), tagStandard52h13_create(),
         tagCircle21h7_create(), tagCircle49h12_create(),
-        tagCustom48h12_create(), NULL };
+        tagCustom48h12_create(),tagCustom48h11_create(), NULL };
     
     _tagFamilies = zarray_create(sizeof(apriltag_family_t*));
     for (int i = 0; objs[i] != NULL; i++)
